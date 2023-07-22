@@ -20,6 +20,7 @@ const RUN_STOP_TIME = 0.2
 var coyote = COYOTE_TIME
 var jump_buffer = 0.0
 var jumping = false
+var previous_dir = 0
 
 
 func _physics_process(delta: float) -> void:
@@ -42,12 +43,11 @@ func _physics_process(delta: float) -> void:
 		jump_buffer = JUMP_BUFFER_TIME
 
 	# Get the input direction and handle the movement/deceleration.
-	var direction := Input.get_axis("move_left", "move_right")
+	var direction := get_horiz_direction()
 	if direction:
 		velocity.x = move_toward(velocity.x, MAX_RUN_SPEED*direction, run_accel*delta)
 	else:
 		velocity.x = move_toward(velocity.x, 0, run_decel*delta)
-	print(velocity.x)
 
 	move_and_slide()
 
@@ -72,3 +72,18 @@ func update_timers(delta: float) -> void:
 		
 	if jump_buffer > 0:
 		jump_buffer -= delta
+
+
+func get_horiz_direction() -> int:
+	var l = Input.is_action_pressed("move_left")
+	var r = Input.is_action_pressed("move_right")
+	if l and r:
+		return -previous_dir
+	elif l:
+		previous_dir = -1
+		return -1
+	elif r:
+		previous_dir = 1
+		return 1
+	previous_dir = 0
+	return 0
