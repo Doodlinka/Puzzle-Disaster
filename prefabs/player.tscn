@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://kgurdpblc4ae"]
+
+[ext_resource type="Script" path="res://scripts/PlayerMovement.gd" id="1_dbimw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wd5p2"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lhidm"]
+
+[node name="player" type="CharacterBody2D"]
+platform_on_leave = 1
+script = ExtResource("1_dbimw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wd5p2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20, 20)
+texture = SubResource("PlaceholderTexture2D_lhidm")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2, 2)
