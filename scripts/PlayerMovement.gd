@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 const JUMP_HEIGHT = 3*16
 const JUMP_RISE_TIME = 0.35
-const JUMP_FALL_TIME = 0.25
+const JUMP_FALL_TIME = 0.35
 const COYOTE_TIME = 0.1
 const JUMP_BUFFER_TIME = 0.1
 const MAX_FALL_SPEED = 640
