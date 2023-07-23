@@ -1,8 +1,10 @@
 # MFGJ
-This is the beginning of a 2D pixel platformer for a game jam!
+A puzzle platformer with a "partial reset" mechanic made for My First Game Jam (summer 2023).
 
 ## IMPORTANT:
-Commit your changes before pulling any to not lose them! Or shash them, pull and then unstash.
+- Commit your changes before pulling any to not lose them! Or shash them, pull and then unstash.
+- Godot doesn't offer a clean way to move scenes between projects, so all development ought to be done here.
+- If you need to undo a commit, use "revert". Only "amend" if you haven't pushed it yet to avoid "temporal paradoxes".
 
 ## Contributors
 - J9
