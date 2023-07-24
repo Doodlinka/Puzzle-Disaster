@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dabpnj8dbod01"]
+[gd_scene load_steps=6 format=3 uid="uid://dabpnj8dbod01"]
 
-[ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://prefabs/player.tscn" id="1_vmywe"]
+[ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_q2424"]
+[ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://scenes/player.tscn" id="1_vmywe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5assx"]
 
@@ -12,7 +13,8 @@ gradient = SubResource("Gradient_k12yn")
 width = 2
 height = 2
 
-[node name="Node2D" type="Node2D"]
+[node name="Level" type="Node2D"]
+script = ExtResource("1_q2424")
 
 [node name="player" parent="." instance=ExtResource("1_vmywe")]
 
