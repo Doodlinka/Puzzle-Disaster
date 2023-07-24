@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bse8q78tg2q6"
-path="res://.godot/imported/brick texture.png-5340b5859d91fe906f4984ab4aafa85b.ctex"
+uid="uid://dqfxlfp53uwo0"
+path="res://.godot/imported/wood tile.png-830546dd3cfdc350ab68ca56be1e6c2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://brick texture.png"
-dest_files=["res://.godot/imported/brick texture.png-5340b5859d91fe906f4984ab4aafa85b.ctex"]
+source_file="res://sprites/tilesets/wood tile.png"
+dest_files=["res://.godot/imported/wood tile.png-830546dd3cfdc350ab68ca56be1e6c2e.ctex"]
 
 [params]
 
