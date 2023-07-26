@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://scripts/PlayerMovement.gd" id="1_dbimw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd5p2"]
+size = Vector2(16, 16)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lhidm"]
 
@@ -14,8 +15,7 @@ script = ExtResource("1_dbimw")
 shape = SubResource("RectangleShape2D_wd5p2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(20, 20)
+scale = Vector2(16, 16)
 texture = SubResource("PlaceholderTexture2D_lhidm")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
