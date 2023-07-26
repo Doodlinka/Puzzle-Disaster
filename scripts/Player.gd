@@ -25,7 +25,26 @@ var previous_dir = 0
 
 func _physics_process(delta: float) -> void:
 	update_timers(delta)
+	process_movement(delta)
 	
+	if Input.is_action_just_pressed("save_state"):
+		SignalBus.save_state.emit()
+	if Input.is_action_just_pressed("load_state"):
+		SignalBus.load_state.emit()
+	
+	
+func update_timers(delta: float) -> void:
+	if not is_on_floor():
+		if coyote > 0:
+			coyote -= delta
+	else:
+		coyote = COYOTE_TIME
+		
+	if jump_buffer > 0:
+		jump_buffer -= delta
+
+
+func process_movement(delta: float) -> void:
 	# switch gravity
 	if velocity.y >= 0 or Input.is_action_just_released("jump"):
 		jumping = false
@@ -61,17 +80,6 @@ func jump():
 	velocity.y = jump_velocity
 	coyote = 0
 	jump_buffer = 0
-
-
-func update_timers(delta: float) -> void:
-	if not is_on_floor():
-		if coyote > 0:
-			coyote -= delta
-	else:
-		coyote = COYOTE_TIME
-		
-	if jump_buffer > 0:
-		jump_buffer -= delta
 
 
 func get_horiz_direction() -> int:
