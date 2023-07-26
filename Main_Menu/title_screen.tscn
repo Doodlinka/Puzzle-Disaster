@@ -1,0 +1,126 @@
+[gd_scene load_steps=6 format=3 uid="uid://c2fghjk1uilm8"]
+
+[ext_resource type="Script" path="res://title_screen.gd" id="1_6b0x3"]
+
+[sub_resource type="Animation" id="Animation_bbacc"]
+resource_name = "Start-screen"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(16, 36), Vector2(16, 273)]
+}
+
+[sub_resource type="Animation" id="Animation_apran"]
+resource_name = "Loaded-screen"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(16, 282), Vector2(16, 298), Vector2(16, 282)]
+}
+
+[sub_resource type="Animation" id="Animation_7vwxw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ks12"]
+_data = {
+"Loaded-screen": SubResource("Animation_apran"),
+"RESET": SubResource("Animation_7vwxw"),
+"Start-screen": SubResource("Animation_bbacc")
+}
+
+[node name="title-screen" type="Node2D"]
+script = ExtResource("1_6b0x3")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -29.0
+offset_top = -47.0
+offset_right = 1191.0
+offset_bottom = 732.0
+color = Color(0.156863, 0, 0.360784, 1)
+
+[node name="PlayButton" type="TextureButton" parent="."]
+offset_left = 514.0
+offset_top = 247.0
+offset_right = 554.0
+offset_bottom = 287.0
+
+[node name="PlayRect" type="ColorRect" parent="PlayButton"]
+layout_mode = 0
+offset_right = 139.0
+offset_bottom = 40.0
+color = Color(0.752941, 0.376471, 1, 1)
+
+[node name="Play" type="Label" parent="PlayButton"]
+layout_mode = 0
+offset_right = 137.0
+offset_bottom = 40.0
+text = "Play
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="QuitButton" type="TextureButton" parent="."]
+offset_left = 514.0
+offset_top = 337.0
+offset_right = 554.0
+offset_bottom = 377.0
+
+[node name="QuitRect" type="ColorRect" parent="QuitButton"]
+layout_mode = 0
+offset_right = 139.0
+offset_bottom = 40.0
+color = Color(0.74902, 0.376471, 0.996078, 1)
+
+[node name="Quit" type="Label" parent="QuitButton"]
+layout_mode = 0
+offset_right = 141.0
+offset_bottom = 40.0
+text = "Quit"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Title2" type="Node2D" parent="."]
+
+[node name="Title" type="Label" parent="Title2"]
+offset_left = 202.0
+offset_top = -285.0
+offset_right = 940.0
+offset_bottom = -99.0
+theme_override_font_sizes/font_size = 64
+text = "Super Cool Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Title2/Title"]
+libraries = {
+"": SubResource("AnimationLibrary_7ks12")
+}
