@@ -1,54 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dabpnj8dbod01"]
+[gd_scene load_steps=2 format=3 uid="uid://dabpnj8dbod01"]
 
 [ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://scenes/player.tscn" id="1_vmywe"]
+[ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_q2424"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5assx"]
-
-[sub_resource type="Gradient" id="Gradient_k12yn"]
-colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_t0dmu"]
-gradient = SubResource("Gradient_k12yn")
-width = 2
-height = 2
-
-[node name="Node2D" type="Node2D"]
-
-[node name="player" parent="." instance=ExtResource("1_vmywe")]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 35)
-scale = Vector2(21.631, 1.10888)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_5assx")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(4.76837e-07, 9.53674e-07)
-scale = Vector2(10, 10)
-texture = SubResource("GradientTexture2D_t0dmu")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(87, -9)
-scale = Vector2(5.1586, 0.666979)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("RectangleShape2D_5assx")
-one_way_collision = true
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(4.76837e-07, 9.53674e-07)
-scale = Vector2(10, 10)
-texture = SubResource("GradientTexture2D_t0dmu")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(-8, -48)
-scale = Vector2(5.1586, -0.733022)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-shape = SubResource("RectangleShape2D_5assx")
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
-position = Vector2(4.76837e-07, 9.53674e-07)
-scale = Vector2(10, 10)
-texture = SubResource("GradientTexture2D_t0dmu")
+[node name="Level" type="Node2D"]
+script = ExtResource("1_q2424")
+first_level_path = "res://scenes/levels/test level.tscn"
