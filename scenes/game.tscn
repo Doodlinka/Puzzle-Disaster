@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dabpnj8dbod01"]
 
-[ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://prefabs/player.tscn" id="1_vmywe"]
+[ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://scenes/player.tscn" id="1_vmywe"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5assx"]
 
