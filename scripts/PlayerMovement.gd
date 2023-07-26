@@ -38,9 +38,10 @@ func _physics_process(delta: float) -> void:
 		velocity.y = VARJUMP_VELOCITY_CLAMP
 	
 	# fall
-	velocity.y += get_gravity() * delta
-	if velocity.y > MAX_FALL_SPEED:
-		velocity.y = MAX_FALL_SPEED
+	if not is_on_floor():
+		velocity.y += get_gravity() * delta
+		if velocity.y > MAX_FALL_SPEED:
+			velocity.y = MAX_FALL_SPEED
 	
 	# Handle Jump.
 	if coyote > 0 or is_on_floor():
