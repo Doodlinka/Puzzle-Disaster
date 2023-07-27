@@ -36,9 +36,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("load_state"):
 		SignalBus.load_state.emit()
 
-
-func on
-
 	
 func update_timers(delta: float) -> void:
 	if not is_on_floor():
