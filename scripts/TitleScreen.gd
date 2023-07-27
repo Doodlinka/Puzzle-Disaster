@@ -32,7 +32,7 @@ func _input(event):
 	elif Input.is_action_just_pressed("ui_accept"):
 		match selected_menu:
 			0:
-				get_tree().change_scene_to_file("res://main_scene.tscn")
+				get_tree().change_scene_to_file("res://scenes/game.tscn")
 			1:
 				get_tree().quit()
 
