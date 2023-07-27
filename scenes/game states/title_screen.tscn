@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c2fghjk1uilm8"]
 
-[ext_resource type="Script" path="res://scripts/title_screen.gd" id="1_6b0x3"]
+[ext_resource type="Script" path="res://scripts/TitleScreen.gd" id="1_6b0x3"]
 
 [sub_resource type="Animation" id="Animation_apran"]
 resource_name = "Loaded-screen"
@@ -61,17 +61,17 @@ _data = {
 script = ExtResource("1_6b0x3")
 
 [node name="Background" type="ColorRect" parent="."]
-offset_left = -19.0
-offset_top = -7.0
-offset_right = 522.0
-offset_bottom = 324.0
+offset_left = -29.0
+offset_top = -47.0
+offset_right = 1191.0
+offset_bottom = 732.0
 color = Color(0.156863, 0, 0.360784, 1)
 
 [node name="PlayButton" type="TextureButton" parent="."]
-offset_left = 168.0
-offset_top = 169.0
-offset_right = 168.0
-offset_bottom = 209.0
+offset_left = 514.0
+offset_top = 247.0
+offset_right = 554.0
+offset_bottom = 287.0
 
 [node name="PlayRect" type="ColorRect" parent="PlayButton"]
 layout_mode = 0
@@ -89,10 +89,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="QuitButton" type="TextureButton" parent="."]
-offset_left = 168.0
-offset_top = 229.0
-offset_right = 208.0
-offset_bottom = 269.0
+offset_left = 514.0
+offset_top = 337.0
+offset_right = 554.0
+offset_bottom = 377.0
 
 [node name="QuitRect" type="ColorRect" parent="QuitButton"]
 layout_mode = 0
@@ -111,15 +111,14 @@ vertical_alignment = 1
 [node name="Title2" type="Node2D" parent="."]
 
 [node name="Title" type="Label" parent="Title2"]
-offset_left = -128.0
-offset_top = -335.0
-offset_right = 610.0
-offset_bottom = -149.0
-theme_override_font_sizes/font_size = 30
+offset_left = 202.0
+offset_top = -285.0
+offset_right = 940.0
+offset_bottom = -99.0
+theme_override_font_sizes/font_size = 64
 text = "Super Cool Game"
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Title2/Title"]
 libraries = {
