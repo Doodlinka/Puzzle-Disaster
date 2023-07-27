@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dabpnj8dbod01"]
-
-[ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://scenes/player.tscn" id="1_vmywe"]
-[ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_q2424"]
-
-[node name="Level" type="Node2D"]
-script = ExtResource("1_q2424")
-first_level_path = "res://scenes/levels/test level.tscn"

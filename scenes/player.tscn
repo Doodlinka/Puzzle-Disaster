@@ -1,18 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://kgurdpblc4ae"]
+[gd_scene load_steps=6 format=3 uid="uid://kgurdpblc4ae"]
 
-[ext_resource type="Script" path="res://scripts/Player.gd" id="1_1u0lk"]
+[ext_resource type="Script" path="res://scripts/actors/PlayerMovement.gd" id="1_20tw4"]
+[ext_resource type="Script" path="res://scripts/actors/PlayerArea.gd" id="2_lt5il"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd5p2"]
 size = Vector2(16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wjvwb"]
+size = Vector2(14, 14)
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lhidm"]
 
 [node name="player" type="CharacterBody2D"]
 platform_on_leave = 1
-script = ExtResource("1_1u0lk")
+script = ExtResource("1_20tw4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="SolidBox" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_wd5p2")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("2_lt5il")
+
+[node name="InteractBox" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_wjvwb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(16, 16)

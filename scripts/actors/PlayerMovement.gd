@@ -1,30 +1,30 @@
 extends CharacterBody2D
 
 
-const MAX_JUMP_HEIGHT = 4*16
-const MIN_JUMP_HEIGHT = 16
-const JUMP_RISE_TIME = 0.35
-const JUMP_FALL_TIME = 0.25
-const COYOTE_TIME = 0.15
-const JUMP_BUFFER_TIME = 0.15
-const MAX_FALL_SPEED = 400
-const JUMP_HORIZ_VEL_MULT = 1.2
+const MAX_JUMP_HEIGHT := 4*16
+const MIN_JUMP_HEIGHT := 16
+const JUMP_RISE_TIME := 0.35
+const JUMP_FALL_TIME := 0.25
+const COYOTE_TIME := 0.15
+const JUMP_BUFFER_TIME := 0.15
+const MAX_FALL_SPEED := 400
+const JUMP_HORIZ_VEL_MULT := 1.2
 
-const MAX_RUN_SPEED = 180
-const RUN_START_TIME = 0.4
-const RUN_STOP_TIME = 0.2
+const MAX_RUN_SPEED := 180
+const RUN_START_TIME := 0.4
+const RUN_STOP_TIME := 0.2
 
-const JUMP_VELOCITY : float = -((2.0 * MAX_JUMP_HEIGHT) / JUMP_RISE_TIME)
-const VARJUMP_VELOCITY_CLAMP = -((2.0 * MIN_JUMP_HEIGHT) / JUMP_RISE_TIME)
-const JUMP_GRAVITY : float = ((2.0 * MAX_JUMP_HEIGHT) / (JUMP_RISE_TIME * JUMP_RISE_TIME))
-const FALL_GRAVITY : float = ((2.0 * MAX_JUMP_HEIGHT) / (JUMP_FALL_TIME * JUMP_FALL_TIME))
-const RUN_ACCEL : float = ((2.0 * MAX_RUN_SPEED) / (RUN_START_TIME * RUN_START_TIME))
-const RUN_DECEL : float = ((2.0 * MAX_RUN_SPEED) / (RUN_STOP_TIME * RUN_STOP_TIME))
+const JUMP_VELOCITY := -((2.0 * MAX_JUMP_HEIGHT) / JUMP_RISE_TIME)
+const VARJUMP_VELOCITY_CLAMP := -((2.0 * MIN_JUMP_HEIGHT) / JUMP_RISE_TIME)
+const JUMP_GRAVITY := ((2.0 * MAX_JUMP_HEIGHT) / (JUMP_RISE_TIME * JUMP_RISE_TIME))
+const FALL_GRAVITY := ((2.0 * MAX_JUMP_HEIGHT) / (JUMP_FALL_TIME * JUMP_FALL_TIME))
+const RUN_ACCEL := ((2.0 * MAX_RUN_SPEED) / (RUN_START_TIME * RUN_START_TIME))
+const RUN_DECEL := ((2.0 * MAX_RUN_SPEED) / (RUN_STOP_TIME * RUN_STOP_TIME))
 
-var coyote = COYOTE_TIME
-var jump_buffer = 0.0
-var jumping = false
-var previous_dir = 0
+var coyote := COYOTE_TIME
+var jump_buffer := 0.0
+var jumping := false
+var previous_dir := 0
 
 
 func _physics_process(delta: float) -> void:
@@ -35,7 +35,10 @@ func _physics_process(delta: float) -> void:
 		SignalBus.save_state.emit()
 	if Input.is_action_just_pressed("load_state"):
 		SignalBus.load_state.emit()
-	
+
+
+func on
+
 	
 func update_timers(delta: float) -> void:
 	if not is_on_floor():
