@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgnibwebtbfrt"
-path="res://.godot/imported/wood texture 2.png-1c9c21ebadd774b7737b79764243461c.ctex"
+uid="uid://dkg76v3c0snbq"
+path="res://.godot/imported/key.png-7062564e94694f2cfb7561265e4d6e7e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://unused/art/tilepipe/wood texture 2.png"
-dest_files=["res://.godot/imported/wood texture 2.png-1c9c21ebadd774b7737b79764243461c.ctex"]
+source_file="res://sprites/objects/key.png"
+dest_files=["res://.godot/imported/key.png-7062564e94694f2cfb7561265e4d6e7e.ctex"]
 
 [params]
 
@@ -31,4 +31,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
