@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c67bdbrx421nr"]
+[gd_scene load_steps=7 format=3 uid="uid://c67bdbrx421nr"]
 
 [ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://scenes/player.tscn" id="1_c52re"]
 [ext_resource type="PackedScene" uid="uid://byyk6n6xfdpe7" path="res://scenes/objects/door.tscn" id="2_veik2"]
+[ext_resource type="PackedScene" uid="uid://b7ckk5owiw72g" path="res://scenes/objects/crumbling_platform.tscn" id="3_071sr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5assx"]
 
@@ -30,19 +31,6 @@ position = Vector2(4.76837e-07, 9.53674e-07)
 scale = Vector2(10, 10)
 texture = SubResource("GradientTexture2D_t0dmu")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(97, -20)
-scale = Vector2(5.1586, 0.666979)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-shape = SubResource("RectangleShape2D_5assx")
-one_way_collision = true
-
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(4.76837e-07, 9.53674e-07)
-scale = Vector2(10, 10)
-texture = SubResource("GradientTexture2D_t0dmu")
-
 [node name="StaticBody2D3" type="StaticBody2D" parent="."]
 position = Vector2(-8, -74)
 scale = Vector2(5.1586, -0.733022)
@@ -58,3 +46,6 @@ texture = SubResource("GradientTexture2D_t0dmu")
 [node name="Door" parent="." instance=ExtResource("2_veik2")]
 position = Vector2(-30, -97)
 level_path = "res://scenes/levels/test level.tscn"
+
+[node name="CrumblingPlatform" parent="." instance=ExtResource("3_071sr")]
+position = Vector2(81, -21)
