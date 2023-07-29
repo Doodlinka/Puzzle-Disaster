@@ -1,32 +1,33 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7ckk5owiw72g"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ckk5owiw72g"]
 
 [ext_resource type="Script" path="res://scripts/objects/CrumblingPlatform.gd" id="1_k1unr"]
-[ext_resource type="Texture2D" uid="uid://cneydpg38553w" path="res://sprites/objects/door.png" id="2_t6qmn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kv5bb"]
-size = Vector2(33, 20)
+size = Vector2(16, 8)
+
+[sub_resource type="Gradient" id="Gradient_gn2yt"]
+colors = PackedColorArray(0.152941, 0.152941, 0.152941, 1, 0.152941, 0.152941, 0.152941, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aoeuq"]
+gradient = SubResource("Gradient_gn2yt")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4c7h"]
-size = Vector2(34, 4)
+size = Vector2(16, 2)
 
 [node name="CrumblingPlatform" type="StaticBody2D"]
+position = Vector2(2, 6)
 script = ExtResource("1_k1unr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.5, 0)
+position = Vector2(-2, -6)
 shape = SubResource("RectangleShape2D_kv5bb")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 offset_left = -10.0
 offset_top = -10.0
-offset_right = 24.0
-offset_bottom = 10.0
-texture = ExtResource("2_t6qmn")
-region_rect = Rect2(4, 0, 24, 32)
-patch_margin_left = 14
-patch_margin_top = 4
-patch_margin_right = 20
-patch_margin_bottom = 6
+offset_right = 6.0
+offset_bottom = -2.0
+texture = SubResource("GradientTexture2D_aoeuq")
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 
@@ -35,8 +36,9 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-2, -6)
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(7, -12)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_d4c7h")
