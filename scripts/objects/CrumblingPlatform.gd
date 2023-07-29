@@ -30,11 +30,11 @@ func on_save_state() -> void:
 func on_load_state() -> void:
 	if save_data.is_empty():
 		return
-	if save_data.stopped:
-		timer.stop()
-	else:
-		timer.start(save_data.time)
 	set_disabled(save_data.crumbled)
+	if not save_data.stopped or area.has_overlapping_areas():
+		timer.start(save_data.time)
+	else:
+		timer.stop()
 
 
 func set_disabled(value := true) -> void:
