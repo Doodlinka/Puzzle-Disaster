@@ -1,7 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://dabpnj8dbod01"]
 
-[ext_resource type="Script" path="res://scripts/LevelManager.gd" id="1_iywn7"]
+[ext_resource type="Script" path="res://scripts/LevelLoader.gd" id="1_asoe2"]
 
 [node name="Level" type="Node2D"]
-script = ExtResource("1_iywn7")
+script = ExtResource("1_asoe2")
 first_level_path = "res://scenes/levels/test level.tscn"

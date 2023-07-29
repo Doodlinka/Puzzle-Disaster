@@ -28,6 +28,8 @@ func on_save_state() -> void:
 	
 	
 func on_load_state() -> void:
+	if save_data.is_empty():
+		return
 	if save_data.stopped:
 		timer.stop()
 	else:
@@ -37,6 +39,6 @@ func on_load_state() -> void:
 
 func set_disabled(value := true) -> void:
 	crumbled = value
-	collision_shape.disabled = value
+	collision_shape.set_deferred("disabled", value)
 	area.monitoring = not value
 	sprite.visible = not value

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c67bdbrx421nr"]
+[gd_scene load_steps=8 format=3 uid="uid://c67bdbrx421nr"]
 
 [ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://scenes/player.tscn" id="1_c52re"]
 [ext_resource type="PackedScene" uid="uid://byyk6n6xfdpe7" path="res://scenes/objects/door.tscn" id="2_veik2"]
 [ext_resource type="PackedScene" uid="uid://b7ckk5owiw72g" path="res://scenes/objects/crumbling_platform.tscn" id="3_071sr"]
+[ext_resource type="PackedScene" uid="uid://srxtmsjoe3fm" path="res://scenes/objects/key.tscn" id="4_c0fem"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5assx"]
 
@@ -49,3 +50,6 @@ level_path = "res://scenes/levels/test level.tscn"
 
 [node name="CrumblingPlatform" parent="." instance=ExtResource("3_071sr")]
 position = Vector2(81, -21)
+
+[node name="Key" parent="." instance=ExtResource("4_c0fem")]
+position = Vector2(-159, 12)
