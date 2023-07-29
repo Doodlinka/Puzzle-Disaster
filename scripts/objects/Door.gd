@@ -7,11 +7,11 @@ var has_key := false
 
 
 func _ready() -> void:
-	SignalBus.set_key.connect(set_has_key)
+	SignalBus.set_key.connect(get_key)
 
 
-func set_has_key(value) -> void:
-	has_key = value
+func get_key() -> void:
+	has_key = true
 
 
 func interact() -> void:

@@ -19,7 +19,7 @@ func on_area_enter(area: Area2D) -> void:
 	if area is Interactable:
 		current_interactable = area
 	elif area is Pickup:
-		area.set_picked_up(true)
+		area.pick_up()
 
 
 func on_area_exit(area: Area2D) -> void:

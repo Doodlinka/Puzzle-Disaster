@@ -6,10 +6,9 @@ extends Pickup
 @onready var sprite := $Sprite2D
 
 
-func set_picked_up(value := true) -> void:
-	super.set_picked_up(value)
-	collision_shape.set_deferred("disabled", value)
-	sprite.visible = not value
-	SignalBus.set_key.emit(value)
-	if value:
-		audio.play()
+func pick_up() -> void:
+	super.pick_up()
+	collision_shape.set_deferred("disabled", true)
+	sprite.visible = false
+	SignalBus.set_key.emit()
+	audio.play()
