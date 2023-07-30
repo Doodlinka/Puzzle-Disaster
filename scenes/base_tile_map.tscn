@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dndypimrvrsi7"]
+
+[ext_resource type="TileSet" uid="uid://ckrn4hyyu7vbw" path="res://scenes/game states/tilemap.tres" id="1_gg3xv"]
+
+[node name="TileMap" type="TileMap"]
+tile_set = ExtResource("1_gg3xv")
+format = 2
+layer_0/name = "background"
+layer_1/name = "foreground"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array()
