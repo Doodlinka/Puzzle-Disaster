@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://byyk6n6xfdpe7"]
 
 [ext_resource type="Script" path="res://scripts/objects/Door.gd" id="1_nwuj7"]
-[ext_resource type="Texture2D" uid="uid://del3rrwy4hsun" path="res://sprites/objects/door2.png" id="2_pgk52"]
+[ext_resource type="Texture2D" uid="uid://meslf3xfc3p6" path="res://sprites/objects/locked door1.png" id="2_d2fu0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1q627"]
 size = Vector2(26, 32)
@@ -16,4 +16,4 @@ level_path = null
 shape = SubResource("RectangleShape2D_1q627")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_pgk52")
+texture = ExtResource("2_d2fu0")
