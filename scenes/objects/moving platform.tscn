@@ -41,3 +41,7 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
 position = Vector2(0, -6)
 shape = SubResource("RectangleShape2D_60nig")
+
+[node name="Line2D" type="Line2D" parent="AnimatableBody2D"]
+width = 4.0
+default_color = Color(0.227451, 0.729412, 0.85098, 1)
