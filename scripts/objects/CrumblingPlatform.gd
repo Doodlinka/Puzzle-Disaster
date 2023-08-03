@@ -4,7 +4,7 @@ extends StaticBody2D
 @onready var timer := $Timer
 @onready var collision_shape := $CollisionShape2D
 @onready var area := $Area2D
-@onready var sprite := $NinePatchRect
+@onready var sprite := $AnimatedSprite2D
 
 var save_data := {}
 var crumbled := false
@@ -18,6 +18,7 @@ func _ready() -> void:
 
 
 func start_timer(_area) -> void:
+	sprite.frame = 1
 	timer.start()
 
 
@@ -31,10 +32,16 @@ func on_load_state() -> void:
 	if save_data.is_empty():
 		return
 	set_disabled(save_data.crumbled)
-	if not save_data.stopped or area.has_overlapping_areas():
-		timer.start(save_data.time)
+	if save_data.stopped:
+		if not crumbled:
+			if area.has_overlapping_areas():
+				sprite.frame = 1
+				timer.start(save_data.time)
+			else:
+				sprite.frame = 0
+				timer.stop()
 	else:
-		timer.stop()
+		timer.start(save_data.time)
 
 
 func set_disabled(value := true) -> void:
