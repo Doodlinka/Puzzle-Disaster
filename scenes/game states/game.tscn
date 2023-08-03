@@ -9,4 +9,5 @@ first_level_path = "res://scenes/levels/level_0.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_owas8")
+volume_db = -10.0
 autoplay = true
