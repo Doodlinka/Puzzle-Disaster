@@ -43,6 +43,8 @@ func _physics_process(delta: float) -> void:
 		SignalBus.save_state.emit()
 	if Input.is_action_just_pressed("load_state"):
 		SignalBus.load_state.emit()
+	if Input.is_action_just_pressed("reload_level"):
+		SignalBus.reload_level.emit()
 
 	
 func update_timers(delta: float) -> void:
