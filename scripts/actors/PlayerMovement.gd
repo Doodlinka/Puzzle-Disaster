@@ -26,10 +26,18 @@ var jump_buffer := 0.0
 var jumping := false
 var previous_dir := 0
 
+@onready var anim_tree := $AnimationTree
+@onready var sprite := $Sprite2D
+
+
+func _ready() -> void:
+	anim_tree.active = true
+
 
 func _physics_process(delta: float) -> void:
 	update_timers(delta)
 	process_movement(delta)
+	update_animation()
 	
 	if Input.is_action_just_pressed("save_state"):
 		SignalBus.save_state.emit()
@@ -104,3 +112,16 @@ func get_horiz_direction() -> int:
 		return 1
 	previous_dir = 0
 	return 0
+
+func update_animation() -> void:
+	if velocity.x < 0:
+		sprite.flip_h = true
+		anim_tree["parameters/walking/transition_request"] = "true"
+	elif velocity.x > 0:
+		sprite.flip_h = false
+		anim_tree["parameters/walking/transition_request"] = "true"
+	else:
+		anim_tree["parameters/walking/transition_request"] = "false"
+		
+	anim_tree["parameters/jumping/transition_request"] = "true" if jumping else "false"
+	anim_tree["parameters/midair/transition_request"] = "true" if not is_on_floor() else "false"

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/objects/Key.gd" id="1_5q57f"]
 [ext_resource type="Texture2D" uid="uid://dkg76v3c0snbq" path="res://sprites/objects/key.png" id="2_xsxlc"]
-[ext_resource type="AudioStream" uid="uid://b5osxhnup6cnu" path="res://key.wav" id="3_fulq2"]
+[ext_resource type="AudioStream" uid="uid://co10j5i7y81r" path="res://sounds/key.wav" id="3_wmkm5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_li5d5"]
 size = Vector2(9, 18)
@@ -21,4 +21,4 @@ position = Vector2(4.17233e-07, 0)
 texture = ExtResource("2_xsxlc")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_fulq2")
+stream = ExtResource("3_wmkm5")

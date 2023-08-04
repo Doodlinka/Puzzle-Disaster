@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dabpnj8dbod01"]
 
 [ext_resource type="Script" path="res://scripts/LevelLoader.gd" id="1_asoe2"]
-[ext_resource type="AudioStream" path="res://Library_theme.wav" id="2_owas8"]
+[ext_resource type="AudioStream" uid="uid://cgvq1qpy4b4ug" path="res://sounds/Library_theme.wav" id="2_x7n6u"]
 
 [node name="Level" type="Node2D"]
 script = ExtResource("1_asoe2")
 first_level_path = "res://scenes/levels/level_0.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_owas8")
+stream = ExtResource("2_x7n6u")
 volume_db = -10.0
 autoplay = true

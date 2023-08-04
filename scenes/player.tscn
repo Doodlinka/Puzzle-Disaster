@@ -1,21 +1,167 @@
-[gd_scene load_steps=6 format=3 uid="uid://kgurdpblc4ae"]
+[gd_scene load_steps=20 format=3 uid="uid://kgurdpblc4ae"]
 
 [ext_resource type="Script" path="res://scripts/actors/PlayerMovement.gd" id="1_20tw4"]
 [ext_resource type="Script" path="res://scripts/actors/PlayerArea.gd" id="2_lt5il"]
+[ext_resource type="Texture2D" uid="uid://dqdbf6uql3j8t" path="res://sprites/animated player.png" id="3_d8y70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd5p2"]
-size = Vector2(16, 16)
+size = Vector2(16, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjvwb"]
-size = Vector2(14, 14)
+size = Vector2(16, 20)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_js8k7"]
+[sub_resource type="Animation" id="Animation_swull"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_h88d8"]
+resource_name = "fall"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [18, 19, 20, 21]
+}
+
+[sub_resource type="Animation" id="Animation_igcse"]
+resource_name = "idle"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ovpyg"]
+resource_name = "jump"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_dpc7o"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("player/Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0yhal"]
+_data = {
+"RESET": SubResource("Animation_swull"),
+"fall": SubResource("Animation_h88d8"),
+"idle": SubResource("Animation_igcse"),
+"jump": SubResource("Animation_ovpyg"),
+"walk": SubResource("Animation_dpc7o")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_clovc"]
+animation = &"fall"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cbgpp"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_k8mc1"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_8ky67"]
+input_0/name = "false"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "true"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_3drdm"]
+input_0/name = "false"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "true"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8rafo"]
+animation = &"walk"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_3c8lq"]
+input_0/name = "false"
+input_0/auto_advance = false
+input_0/reset = true
+input_1/name = "true"
+input_1/auto_advance = false
+input_1/reset = true
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_lduqy"]
+graph_offset = Vector2(-678.848, 145.393)
+nodes/fall/node = SubResource("AnimationNodeAnimation_clovc")
+nodes/fall/position = Vector2(133.333, 306.667)
+nodes/idle/node = SubResource("AnimationNodeAnimation_cbgpp")
+nodes/idle/position = Vector2(-253.333, 93.3333)
+nodes/jump/node = SubResource("AnimationNodeAnimation_k8mc1")
+nodes/jump/position = Vector2(466.667, 386.667)
+nodes/jumping/node = SubResource("AnimationNodeTransition_8ky67")
+nodes/jumping/position = Vector2(765.013, 289.189)
+nodes/midair/node = SubResource("AnimationNodeTransition_3drdm")
+nodes/midair/position = Vector2(453.333, 186.667)
+nodes/output/position = Vector2(933.333, 306.667)
+nodes/walk/node = SubResource("AnimationNodeAnimation_8rafo")
+nodes/walk/position = Vector2(-280, 266.667)
+nodes/walking/node = SubResource("AnimationNodeTransition_3c8lq")
+nodes/walking/position = Vector2(-40, 213.333)
+node_connections = [&"output", 0, &"jumping", &"midair", 0, &"walking", &"midair", 1, &"fall", &"jumping", 0, &"midair", &"jumping", 1, &"jump", &"walking", 0, &"idle", &"walking", 1, &"walk"]
 
 [node name="player" type="CharacterBody2D"]
 platform_on_leave = 1
 script = ExtResource("1_20tw4")
 
 [node name="SolidBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wd5p2")
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -24,9 +170,32 @@ collision_mask = 4
 script = ExtResource("2_lt5il")
 
 [node name="InteractBox" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_wjvwb")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_js8k7")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_d8y70")
+hframes = 6
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_0yhal")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_lduqy")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/jumping/current_state = "false"
+parameters/jumping/transition_request = ""
+parameters/jumping/current_index = 0
+parameters/midair/current_state = "false"
+parameters/midair/transition_request = ""
+parameters/midair/current_index = 0
+parameters/walking/current_state = "false"
+parameters/walking/transition_request = ""
+parameters/walking/current_index = 0
