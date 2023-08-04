@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://43jto2e7a634"]
+
+[ext_resource type="Script" path="res://scripts/objects/MovingPlatform.gd" id="1_a8gut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cic00"]
+size = Vector2(20, 10)
+
+[sub_resource type="Gradient" id="Gradient_ffswc"]
+colors = PackedColorArray(0.22008, 0.582179, 0.872179, 1, 0.219608, 0.580392, 0.870588, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_36a31"]
+gradient = SubResource("Gradient_ffswc")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_60nig"]
+size = Vector2(20, 2)
+
+[node name="Path2D" type="Path2D"]
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+rotates = false
+cubic_interp = false
+loop = false
+script = ExtResource("1_a8gut")
+
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D"]
+remote_path = NodePath("../../AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_cic00")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+position = Vector2(0, 1.19209e-07)
+scale = Vector2(0.3125, 0.15625)
+texture = SubResource("GradientTexture2D_36a31")
+
+[node name="Area2D" type="Area2D" parent="AnimatableBody2D"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D/Area2D"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_60nig")
+
+[node name="Line2D" type="Line2D" parent="AnimatableBody2D"]
+width = 4.0
+default_color = Color(0.227451, 0.729412, 0.85098, 1)
