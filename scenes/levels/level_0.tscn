@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://d34l3tay6krhg"]
+[gd_scene load_steps=7 format=3 uid="uid://d34l3tay6krhg"]
 
 [ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://scenes/player.tscn" id="2_ledl7"]
 [ext_resource type="PackedScene" uid="uid://dndypimrvrsi7" path="res://scenes/base tilemap.tscn" id="2_qi75k"]
 [ext_resource type="PackedScene" uid="uid://b7ckk5owiw72g" path="res://scenes/objects/crumbling_platform.tscn" id="3_oj0xm"]
 [ext_resource type="PackedScene" uid="uid://byyk6n6xfdpe7" path="res://scenes/objects/door.tscn" id="4_82pb0"]
 [ext_resource type="PackedScene" uid="uid://srxtmsjoe3fm" path="res://scenes/objects/key.tscn" id="5_4sc1k"]
+[ext_resource type="PackedScene" uid="uid://chrdan6dg6um8" path="res://scenes/kill plane.tscn" id="6_etufj"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -34,3 +35,7 @@ level_path = "res://scenes/levels/test level.tscn"
 
 [node name="Key" parent="." instance=ExtResource("5_4sc1k")]
 position = Vector2(207, -60)
+
+[node name="KillPlane" parent="." instance=ExtResource("6_etufj")]
+position = Vector2(87, 171)
+scale = Vector2(15.7915, 1.48519)
