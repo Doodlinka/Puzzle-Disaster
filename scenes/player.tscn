@@ -9,7 +9,7 @@ size = Vector2(16, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wjvwb"]
 size = Vector2(14, 14)
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_lhidm"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_js8k7"]
 
 [node name="player" type="CharacterBody2D"]
 platform_on_leave = 1
@@ -26,8 +26,7 @@ script = ExtResource("2_lt5il")
 [node name="InteractBox" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_wjvwb")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(16, 16)
-texture = SubResource("PlaceholderTexture2D_lhidm")
-
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_js8k7")
