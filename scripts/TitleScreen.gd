@@ -8,6 +8,8 @@ var selected_menu := 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	if get_tree().root.get_child(-1) != self:
+		get_tree().change_scene_to_file("res://scenes/game states/title_screen.tscn")
 	change_menu_color()
 	$Title2/Title/AnimationPlayer.play("Start-screen")
 	await $Title2/Title/AnimationPlayer.animation_finished
