@@ -26,7 +26,7 @@ func play_repeat(from_position: float = 0.0) -> void:
 	if not repeating:
 		repeating = true
 		time_to_next = 0
-		play()
+		play(from_position)
 
 func stop_repeat() -> void:
 	if repeating:
