@@ -1,4 +1,4 @@
-# MFGJ
+# Puzzle Disaster
 An incomplete puzzle platformer with a "partial reset" mechanic made for My First Game Jam (summer 2023).
 Use Shift to save the state of some objects (aka crumbling platforms), and Ctrl to load without affecting anything else.
 
