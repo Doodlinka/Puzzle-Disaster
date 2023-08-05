@@ -1,8 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://kgurdpblc4ae"]
+[gd_scene load_steps=23 format=3 uid="uid://kgurdpblc4ae"]
 
 [ext_resource type="Script" path="res://scripts/PlayerActions.gd" id="1_20tw4"]
 [ext_resource type="Script" path="res://scripts/PlayerArea.gd" id="2_lt5il"]
 [ext_resource type="Texture2D" uid="uid://dqdbf6uql3j8t" path="res://sprites/animated player.png" id="3_d8y70"]
+[ext_resource type="AudioStream" uid="uid://dsepkah4t04lk" path="res://sounds/footstep2.wav" id="4_f0e8n"]
+[ext_resource type="Script" path="res://scripts/RepeatedAudio.gd" id="5_t83je"]
+[ext_resource type="AudioStream" uid="uid://d0txujoxgfe4" path="res://sounds/reset1.wav" id="6_5os6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd5p2"]
 size = Vector2(16, 20)
@@ -138,7 +141,7 @@ input_1/auto_advance = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_lduqy"]
-graph_offset = Vector2(-363.486, -55.3123)
+graph_offset = Vector2(-760.2, 22.7129)
 nodes/fall/node = SubResource("AnimationNodeAnimation_clovc")
 nodes/fall/position = Vector2(133.333, 306.667)
 nodes/idle/node = SubResource("AnimationNodeAnimation_cbgpp")
@@ -199,3 +202,12 @@ parameters/midair/current_index = 0
 parameters/walking/current_state = "false"
 parameters/walking/transition_request = ""
 parameters/walking/current_index = 0
+
+[node name="RepeatedAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f0e8n")
+volume_db = 5.0
+script = ExtResource("5_t83je")
+time_between = 0.3
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5os6d")

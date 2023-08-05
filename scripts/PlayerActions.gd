@@ -28,6 +28,11 @@ var previous_dir := 0
 
 @onready var anim_tree := $AnimationTree
 @onready var sprite := $Sprite2D
+@onready var audio := $AudioStreamPlayer
+@onready var repeated_audio := $RepeatedAudioStreamPlayer
+
+var save_sound = preload("res://sounds/reset1.wav")
+var load_sound = preload("res://sounds/reset2.wav")
 
 
 func _ready() -> void:
@@ -37,14 +42,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	update_timers(delta)
 	process_movement(delta)
+	process_buttons()
 	update_animation()
-	
-	if Input.is_action_just_pressed("save_state"):
-		SignalBus.save_state.emit()
-	if Input.is_action_just_pressed("load_state"):
-		SignalBus.load_state.emit()
-	if Input.is_action_just_pressed("reload_level"):
-		SignalBus.reload_level.emit()
 
 	
 func update_timers(delta: float) -> void:
@@ -115,15 +114,32 @@ func get_horiz_direction() -> int:
 	previous_dir = 0
 	return 0
 
+
 func update_animation() -> void:
 	if velocity.x < 0:
 		sprite.flip_h = true
 		anim_tree["parameters/walking/transition_request"] = "true"
+		repeated_audio.play_repeat()
 	elif velocity.x > 0:
 		sprite.flip_h = false
 		anim_tree["parameters/walking/transition_request"] = "true"
+		repeated_audio.play_repeat()
 	else:
 		anim_tree["parameters/walking/transition_request"] = "false"
+		repeated_audio.stop_repeat()
 		
 	anim_tree["parameters/jumping/transition_request"] = "true" if jumping else "false"
 	anim_tree["parameters/midair/transition_request"] = "true" if not is_on_floor() else "false"
+
+
+func process_buttons() -> void:
+	if Input.is_action_just_pressed("save_state"):
+		SignalBus.save_state.emit()
+		audio.stream = save_sound
+		audio.play()
+	if Input.is_action_just_pressed("load_state"):
+		SignalBus.load_state.emit()
+		audio.stream = load_sound
+		audio.play()
+	if Input.is_action_just_pressed("reload_level"):
+		SignalBus.reload_level.emit()
