@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://q6pap15iqfww"]
+[gd_scene load_steps=7 format=3 uid="uid://q6pap15iqfww"]
 
 [ext_resource type="PackedScene" uid="uid://dndypimrvrsi7" path="res://scenes/base tilemap.tscn" id="1_mxa01"]
 [ext_resource type="PackedScene" uid="uid://kgurdpblc4ae" path="res://scenes/player.tscn" id="2_ssefk"]
 [ext_resource type="PackedScene" uid="uid://b7ckk5owiw72g" path="res://scenes/objects/crumbling_platform.tscn" id="3_qabp2"]
 [ext_resource type="PackedScene" uid="uid://byyk6n6xfdpe7" path="res://scenes/objects/door.tscn" id="4_pt5wy"]
 [ext_resource type="PackedScene" uid="uid://srxtmsjoe3fm" path="res://scenes/objects/key.tscn" id="5_g7pq1"]
+[ext_resource type="PackedScene" uid="uid://chrdan6dg6um8" path="res://scenes/kill plane.tscn" id="6_o4j5v"]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -21,7 +22,7 @@ position = Vector2(-200, 100)
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CrumblingPlatform" parent="." instance=ExtResource("3_qabp2")]
-position = Vector2(-72, 27)
+position = Vector2(-72, 10)
 scale = Vector2(2.36, 1)
 
 [node name="CrumblingPlatform2" parent="." instance=ExtResource("3_qabp2")]
@@ -34,3 +35,7 @@ level_path = "res://scenes/levels/level_1.tscn"
 
 [node name="Key" parent="." instance=ExtResource("5_g7pq1")]
 position = Vector2(207, -60)
+
+[node name="KillPlane" parent="." instance=ExtResource("6_o4j5v")]
+position = Vector2(89, 184)
+scale = Vector2(16.5648, 1.48)
