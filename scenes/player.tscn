@@ -1,7 +1,7 @@
 [gd_scene load_steps=20 format=3 uid="uid://kgurdpblc4ae"]
 
-[ext_resource type="Script" path="res://scripts/actors/PlayerMovement.gd" id="1_20tw4"]
-[ext_resource type="Script" path="res://scripts/actors/PlayerArea.gd" id="2_lt5il"]
+[ext_resource type="Script" path="res://scripts/PlayerActions.gd" id="1_20tw4"]
+[ext_resource type="Script" path="res://scripts/PlayerArea.gd" id="2_lt5il"]
 [ext_resource type="Texture2D" uid="uid://dqdbf6uql3j8t" path="res://sprites/animated player.png" id="3_d8y70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wd5p2"]
@@ -138,7 +138,7 @@ input_1/auto_advance = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_lduqy"]
-graph_offset = Vector2(-678.848, 145.393)
+graph_offset = Vector2(-363.486, -55.3123)
 nodes/fall/node = SubResource("AnimationNodeAnimation_clovc")
 nodes/fall/position = Vector2(133.333, 306.667)
 nodes/idle/node = SubResource("AnimationNodeAnimation_cbgpp")
@@ -154,7 +154,7 @@ nodes/walk/node = SubResource("AnimationNodeAnimation_8rafo")
 nodes/walk/position = Vector2(-280, 266.667)
 nodes/walking/node = SubResource("AnimationNodeTransition_3c8lq")
 nodes/walking/position = Vector2(-40, 213.333)
-node_connections = [&"output", 0, &"jumping", &"midair", 0, &"walking", &"midair", 1, &"fall", &"jumping", 0, &"midair", &"jumping", 1, &"jump", &"walking", 0, &"idle", &"walking", 1, &"walk"]
+node_connections = [&"output", 0, &"jumping", &"jumping", 0, &"midair", &"jumping", 1, &"jump", &"midair", 0, &"walking", &"midair", 1, &"fall", &"walking", 0, &"idle", &"walking", 1, &"walk"]
 
 [node name="player" type="CharacterBody2D"]
 platform_on_leave = 1

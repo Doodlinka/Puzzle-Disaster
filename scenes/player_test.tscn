@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://dfin35hv56bk5"]
 
-[ext_resource type="Script" path="res://scripts/actors/PlayerMovement.gd" id="1_i1kf7"]
+[ext_resource type="Script" path="res://scripts/PlayerActions.gd" id="1_i1kf7"]
 [ext_resource type="Texture2D" uid="uid://dqdbf6uql3j8t" path="res://sprites/animated player.png" id="2_53qlw"]
 
 [sub_resource type="Animation" id="Animation_swull"]

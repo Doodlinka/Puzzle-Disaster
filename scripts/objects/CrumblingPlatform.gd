@@ -4,7 +4,9 @@ extends StaticBody2D
 @onready var timer := $Timer
 @onready var collision_shape := $CollisionShape2D
 @onready var area := $Area2D
-@onready var sprite := $AnimatedSprite2D
+@onready var sprite := $NinePatchRect
+var image1 := preload("res://sprites/objects/crumble1.png")
+var image2 := preload("res://sprites/objects/crumble2.png")
 
 var save_data := {}
 var crumbled := false
@@ -18,7 +20,7 @@ func _ready() -> void:
 
 
 func start_timer(_area) -> void:
-	sprite.frame = 1
+	sprite.texture = image2
 	timer.start()
 
 
@@ -35,10 +37,10 @@ func on_load_state() -> void:
 	if save_data.stopped:
 		if not crumbled:
 			if area.has_overlapping_areas():
-				sprite.frame = 1
+				sprite.texture = image2
 				timer.start(save_data.time)
 			else:
-				sprite.frame = 0
+				sprite.texture = image1
 				timer.stop()
 	else:
 		timer.start(save_data.time)

@@ -1,35 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://b7ckk5owiw72g"]
+[gd_scene load_steps=5 format=3 uid="uid://b7ckk5owiw72g"]
 
 [ext_resource type="Script" path="res://scripts/objects/CrumblingPlatform.gd" id="1_k1unr"]
-[ext_resource type="Texture2D" uid="uid://wc53y5qy3ds1" path="res://sprites/objects/crumble.png" id="2_3bt15"]
+[ext_resource type="Texture2D" uid="uid://b6ps8n8a4mwtq" path="res://sprites/objects/crumble1.png" id="3_d8l0w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kv5bb"]
 size = Vector2(16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d4c7h"]
 size = Vector2(16, 2)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0naw7"]
-atlas = ExtResource("2_3bt15")
-region = Rect2(0, 0, 16, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_427sh"]
-atlas = ExtResource("2_3bt15")
-region = Rect2(16, 0, 16, 16)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_28yhe"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0naw7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_427sh")
-}],
-"loop": false,
-"name": &"default",
-"speed": 4.0
-}]
 
 [node name="CrumblingPlatform" type="StaticBody2D"]
 position = Vector2(2, 6)
@@ -49,6 +27,15 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_d4c7h")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_28yhe")
-frame_progress = 1.0
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = -8.0
+offset_top = -8.0
+offset_right = 8.0
+offset_bottom = 8.0
+texture = ExtResource("3_d8l0w")
+patch_margin_left = 2
+patch_margin_top = 2
+patch_margin_right = 2
+patch_margin_bottom = 2
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
