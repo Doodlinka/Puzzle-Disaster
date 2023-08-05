@@ -1,10 +1,14 @@
 # MFGJ
-A puzzle platformer with a "partial reset" mechanic made for My First Game Jam (summer 2023).
+An incomplete puzzle platformer with a "partial reset" mechanic made for My First Game Jam (summer 2023).
+Use Shift to save the state of some objects (aka crumbling platforms), and Ctrl to load without affecting anything else.
 
-## IMPORTANT:
-- Commit your changes before pulling any to not lose them! Or shash them, pull and then unstash.
-- Godot doesn't offer a clean way to move scenes between projects, so all development ought to be done here.
-- If you need to undo a commit, use "revert". Only "amend" if you haven't pushed it yet to avoid "temporal paradoxes".
+## Controls:
+- WASD and arrows for movement
+- C and the spacebar for jump
+- Z and E for interacting
+- Shift to save state
+- Ctrl to load state
+- P to restart level
 
 ## Contributors
 - J9
@@ -18,4 +22,4 @@ A puzzle platformer with a "partial reset" mechanic made for My First Game Jam (
 - Player character inspired in existing asset https://lucky-loops.itch.io/character-satyr
 
 ## Resources used
-- Palette is based on LostCentury24 (https://lospec.com/palette-list/lost-century-24)
+- Some palettes from Lospec, mainly LostCentury24 and Black Hole Blues
