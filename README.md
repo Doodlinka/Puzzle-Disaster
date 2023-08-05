@@ -4,7 +4,7 @@ Use Shift to save the state of some objects (aka crumbling platforms), and Ctrl 
 
 ## Controls:
 - WASD and arrows for movement
-- C and the spacebar for jump
+- C and the spacebar for jump (and press buttons in menu)
 - Z and E for interacting
 - Shift to save state
 - Ctrl to load state
