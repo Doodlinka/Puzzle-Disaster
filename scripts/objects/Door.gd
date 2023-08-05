@@ -2,8 +2,7 @@ extends Interactable
 
 
 @export_file var level_path: String
-
-var has_key := false
+@export var keys_required: int = 1
 
 
 func _ready() -> void:
@@ -11,11 +10,11 @@ func _ready() -> void:
 
 
 func get_key() -> void:
-	has_key = true
+	keys_required -= 1
 
 
 func interact() -> void:
 	super.interact()
-	if has_key:
+	if keys_required <= 0:
 		# insert unlock animation here
 		SignalBus.load_level.emit(level_path)

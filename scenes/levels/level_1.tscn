@@ -39,6 +39,7 @@ scale = Vector2(2.36, 1)
 [node name="Door" parent="." instance=ExtResource("4_xii2g")]
 position = Vector2(188, -113)
 level_path = "res://scenes/levels/level_2.tscn"
+keys_required = 2
 
 [node name="Key" parent="." instance=ExtResource("5_dpcr8")]
 position = Vector2(-88, -95)
