@@ -141,7 +141,6 @@ input_1/auto_advance = false
 input_1/reset = true
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_lduqy"]
-graph_offset = Vector2(-760.2, 22.7129)
 nodes/fall/node = SubResource("AnimationNodeAnimation_clovc")
 nodes/fall/position = Vector2(133.333, 306.667)
 nodes/idle/node = SubResource("AnimationNodeAnimation_cbgpp")
@@ -179,6 +178,7 @@ shape = SubResource("RectangleShape2D_wjvwb")
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
 texture = ExtResource("3_d8y70")
 hframes = 6
 vframes = 4
@@ -205,9 +205,9 @@ parameters/walking/current_index = 0
 
 [node name="RepeatedAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_f0e8n")
-volume_db = 5.0
+volume_db = 3.0
 script = ExtResource("5_t83je")
-time_between = 0.3
+time_between = 0.2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_5os6d")

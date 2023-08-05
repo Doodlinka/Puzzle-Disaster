@@ -44,6 +44,10 @@ func _physics_process(delta: float) -> void:
 	process_movement(delta)
 	process_buttons()
 	update_animation()
+	if velocity.x != 0 and is_on_floor():
+		repeated_audio.play_repeat()
+	else:
+		repeated_audio.stop_repeat()
 
 	
 func update_timers(delta: float) -> void:
@@ -119,14 +123,11 @@ func update_animation() -> void:
 	if velocity.x < 0:
 		sprite.flip_h = true
 		anim_tree["parameters/walking/transition_request"] = "true"
-		repeated_audio.play_repeat()
 	elif velocity.x > 0:
 		sprite.flip_h = false
 		anim_tree["parameters/walking/transition_request"] = "true"
-		repeated_audio.play_repeat()
 	else:
 		anim_tree["parameters/walking/transition_request"] = "false"
-		repeated_audio.stop_repeat()
 		
 	anim_tree["parameters/jumping/transition_request"] = "true" if jumping else "false"
 	anim_tree["parameters/midair/transition_request"] = "true" if not is_on_floor() else "false"
