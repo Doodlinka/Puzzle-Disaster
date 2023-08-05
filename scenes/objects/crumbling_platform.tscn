@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7ckk5owiw72g"]
+[gd_scene load_steps=6 format=3 uid="uid://b7ckk5owiw72g"]
 
 [ext_resource type="Script" path="res://scripts/objects/CrumblingPlatform.gd" id="1_k1unr"]
 [ext_resource type="Texture2D" uid="uid://b6ps8n8a4mwtq" path="res://sprites/objects/crumble1.png" id="3_d8l0w"]
+[ext_resource type="AudioStream" uid="uid://lvl2eha1meh1" path="res://sounds/wood break.wav" id="3_xoldq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kv5bb"]
 size = Vector2(16, 16)
@@ -39,3 +40,6 @@ patch_margin_right = 2
 patch_margin_bottom = 2
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_xoldq")
