@@ -21,9 +21,10 @@ func _ready() -> void:
 
 
 func start_timer(_area) -> void:
-	sprite.texture = image2
-	timer.start()
-	audio.play(0)
+	if timer.is_stopped():
+		sprite.texture = image2
+		timer.start()
+		audio.play(0)
 
 
 func on_save_state() -> void:
