@@ -11,11 +11,11 @@ Use Shift to save the state of some objects (aka crumbling platforms), and Ctrl 
 - P to restart level
 
 ## Contributors
-- J9
-- Remi
-- NightFerret
-- Doodlinka
-- booyah
+- J9(on Discord) - title screen
+- AstrumRemi- music
+- NightFerret- art, sfx
+- Doodlinka- programming, art
+- booyah976- level design
 
 ## Inspiration:
 - Cursed meta endgame of a BIY modpack (warning: confusing) https://youtu.be/bL7hTMUPz0w?t=135s
